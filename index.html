@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            height:500px;
+            width:100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position:relative;
+        }
+        .parentContainer{
+           min-height: 100vh;
+           min-width:100vw;
+           display: flex;
+           justify-content: center;
+           align-items:center;
+        }
+        .container{
+            border-top:10px solid black;
+            min-height:500px;
+            min-width:400px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .m1{
+            background-color: blue;
+            height:450px;
+            width:10px;
+            position:absolute;
+            top:-5px;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+        .m2{
+            height:100px;
+            width:100px;
+            background-color: blueviolet;
+            border-radius: 50%;
+            position: absolute;
+            top:400px;
+        }
+        #box1{
+            transform-origin: top;
+            animation-name: box1-rotate;
+            animation-duration: 10s;
+            animation-timing-function:linear;
+            animation-iteration-count: infinite;
+
+        }
+        #box4{
+            transform-origin: top;
+            animation-name: box4-rotate;
+            animation-duration: 10s;
+            animation-timing-function:linear;
+            animation-iteration-count: infinite;
+            animation-delay: 5s;
+
+        }
+        @keyframes box1-rotate{
+            0%{
+                transform: rotate(0deg);/*0th sec*/
+            }
+            25%{
+                transform: rotate(45deg);/*2.5sec*/
+            }
+            50%{
+                transform: rotate(0deg);/*5sec*/
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+        @keyframes box4-rotate{
+            0%{
+                transform: rotate(0deg);
+            }
+            25%{
+                transform: rotate(-45deg);
+            }
+            50%{
+
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parentContainer">
+        <div class="container">
+                <div class="box" id="box1"><div class="m1"></div><div class="m2"></div></div>
+                <div class="box" id="box2"><div class="m1"></div><div class="m2"></div></div>
+                <div class="box" id="box3"><div class="m1"></div><div class="m2"></div></div>
+                <div class="box" id="box4"><div class="m1"></div><div class="m2"></div></div>
+        </div>
+    </div>
+</body>
+</html>
